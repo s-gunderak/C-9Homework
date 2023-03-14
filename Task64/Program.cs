@@ -6,9 +6,10 @@
 string NumbersRec(int n)
 {
     if (n < 1) return String.Empty;
-    else return $"{n} " + NumbersRec(n - 1);
+    if (n == 1) return $"{n}.";
+    else return $"{n}, " + NumbersRec(n - 1);
 }
 
 Console.Write("Введите число N: ");
 int n = int.Parse(Console.ReadLine());
-Console.WriteLine(NumbersRec(n));
+Console.WriteLine($"N = {n} -> {NumbersRec(n)}");
